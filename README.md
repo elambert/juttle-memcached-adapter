@@ -7,7 +7,18 @@ language](https://github.com/juttle/juttle), with read & write support.
 
 ## Examples
 
-TODO: add examples
+To retrieve the server stats for a particular memcached server:
+
+```
+read memcached -stats server
+```
+
+
+To retrieve the value of the key deadbeef:
+
+```
+read memcached -key deadbeef
+```
 
 ## Installation
 
@@ -35,17 +46,20 @@ within Juttle. To do so, add the following to your `~/.juttle/config.json` file:
 }
 ```
 
-The `connection` key should point to your Memcached instance(s).
+The `memcached` key should point to your Memcached instance(s).
 
 More documentation on the servers and options object can be found in the [memcached documentation](https://github.com/3rd-Eden/memcached)
 
 ## Usage
 
-TODO: add usage
-
 ### Read options
 
-TODO: read options
+Name | Type | Required | Description
+-----|------|----------|-------------
+`key`   | string | no | key to retrieve
+`stats`   | string | no | stats to retrieve from server
+`format`   | string | no | the format of the data retrieved (not supported for stats operations)
+`timeField`   | string | no | the name of the timefield contained in the value (not supported for stats operations)
 
 ### Write options
 
